@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pison Pre/Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+</head>
+<body>
+
+<header>
+    <h1>Pison Pre/Primary School</h1>
+    <p>Building a Strong Foundation for the Future</p>
+</header>
+
+<!-- Navbar with Search -->
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admission.html">Admission</a>
+        <a href="programs.html">Programs</a>
+        <a href="staff.html">Staff</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchPage()">Search</button>
+    </div>
+</nav>
+
+<section class="hero">
+    <h2>Welcome to Pison Pre/Primary School</h2>
+    <p>Quality education in a safe and caring environment.</p>
+</section>
+
+<section class="content">
+    <h3>Our Mission</h3>
+    <p>To nurture children academically, socially, and morally.</p>
+
+    <h3>Our Vision</h3>
+    <p>To be a leading pre and primary school producing disciplined learners.</p>
+</section>
+
+<!-- Admission Form -->
+<section class="form-section">
+    <h2>Online Admission Form</h2>
+    <form>
+        <label>Student Full Name</label>
+        <input type="text" placeholder="Enter student name" required>
+        <label>Date of Birth</label>
+        <input type="date" required>
+        <label>Class Applying For</label>
+        <select required>
+            <option value="">Select Class</option>
+            <option>Pre-Primary</option>
+            <option>Standard One</option>
+            <option>Standard Two</option>
+            <option>Standard Three</option>
+            <option>Standard Four</option>
+            <option>Standard Five</option>
+            <option>Standard Six</option>
+            <option>Standard Seven</option>
+        </select>
+        <label>Parent / Guardian Name</label>
+        <input type="text" required>
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+255..." required>
+        <label>Email Address</label>
+        <input type="email">
+        <label>Additional Information</label>
+        <textarea rows="4"></textarea>
+        <button type="submit">Submit Application</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Pison Pre/Primary School</p>
+</footer>
+
+<script>
+const pages = [
+    { url: "index.html", keywords: ["home", "welcome"] },
+    { url: "admission.html", keywords: ["admission", "apply", "register"] },
+    { url: "programs.html", keywords: ["programs", "classes"] },
+    { url: "staff.html", keywords: ["staff", "teachers"] },
+    { url: "news.html", keywords: ["news", "events"] },
+    { url: "contact.html", keywords: ["contact", "phone", "email"] }
+];
+
+function searchPage() {
+    const q = document.getElementById("searchInput").value.toLowerCase();
+    for (let p of pages) {
+        if (p.keywords.some(k => k.includes(q))) {
+            location.href = p.url;
+            return;
+        }
+    }
+    alert("No page found.");
+}
+</script>
+
+</body>
+</html>

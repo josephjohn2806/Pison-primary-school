@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Pison Pre/Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you!</p>
+</header>
+
+<!-- Navbar with Search -->
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admission.html">Admission</a>
+        <a href="programs.html">Programs</a>
+        <a href="staff.html">Staff</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchPage()">Search</button>
+    </div>
+</nav>
+
+<!-- Contact Info Section -->
+<section class="content">
+    <h2>Get in Touch</h2>
+    <p>If you have any questions, inquiries, or want to visit our school, contact us using the details below or send us a message.</p>
+
+    <h3>Contact Information</h3>
+    <ul>
+        <li><strong>Address:</strong> Pison Pre/Primary School,Arusha, Tanzania</li>
+        <li><strong>Phone:</strong> +255 123 456 789</li>
+        <li><strong>Email:</strong> info@pisonschool.co.tz</li>
+        <li><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 4:00 PM</li>
+    </ul>
+
+    <h3>Find Us on Map</h3>
+    <div style="width:100%;height:400px;margin-top:15px;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.432561234!2d39.208123!3d-6.792345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b0b58efb971%3A0x1b1a8c9f7b0!2sDar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"></iframe>
+    </div>
+</section>
+
+<!-- Admission Form Section -->
+<section class="form-section">
+    <h2>Online Admission Form</h2>
+    <form>
+        <label>Student Full Name</label>
+        <input type="text" placeholder="Enter student name" required>
+
+        <label>Date of Birth</label>
+        <input type="date" required>
+
+        <label>Class Applying For</label>
+        <select required>
+            <option value="">Select Class</option>
+            <option>Pre-Primary</option>
+            <option>Standard One</option>
+            <option>Standard Two</option>
+            <option>Standard Three</option>
+            <option>Standard Four</option>
+            <option>Standard Five</option>
+            <option>Standard Six</option>
+            <option>Standard Seven</option>
+        </select>
+
+        <label>Parent / Guardian Name</label>
+        <input type="text" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+255..." required>
+
+        <label>Email Address</label>
+        <input type="email">
+
+        <label>Additional Information</label>
+        <textarea rows="4"></textarea>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Pison Pre/Primary School</p>
+</footer>
+
+<!-- Smart Search Script -->
+<script>
+const pages = [
+    { url: "index.html", keywords: ["home", "welcome"] },
+    { url: "admission.html", keywords: ["admission", "apply", "register"] },
+    { url: "programs.html", keywords: ["programs", "classes"] },
+    { url: "staff.html", keywords: ["staff", "teachers"] },
+    { url: "news.html", keywords: ["news", "events"] },
+    { url: "contact.html", keywords: ["contact", "phone", "email"] }
+];
+
+function searchPage() {
+    const q = document.getElementById("searchInput").value.toLowerCase();
+    for (let p of pages) {
+        if (p.keywords.some(k => k.includes(q))) {
+            location.href = p.url;
+            return;
+        }
+    }
+    alert("No page found.");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, #0b5394, #073763);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #073763;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-links a {
+    color: #ffffff;
+    margin-right: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd966;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    padding: 7px 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    padding: 7px 14px;
+    border: none;
+    background: #ffd966;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: #ffcc33;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-bottom: 4px solid #073763;
+}
+
+.hero h2 {
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    color: #073763;
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content {
+    background: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.content h2,
+.content h3 {
+    color: #073763;
+    margin-bottom: 10px;
+}
+
+.content ul,
+.content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.content li {
+    margin-bottom: 8px;
+}
+
+/* ===== ADMISSION FORM ===== */
+.form-section {
+    background: #eaf1fb;
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #073763;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border: 1px solid #073763;
+    box-shadow: 0 0 5px rgba(7,55,99,0.2);
+    outline: none;
+}
+
+form button {
+    margin-top: 20px;
+    background: #073763;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #0b5394;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #073763;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 0.95rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
