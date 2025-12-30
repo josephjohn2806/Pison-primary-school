@@ -1,90 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>News | Pison School</title>
-    <link rel="stylesheet" href="css/pison.css">
+<title>School News</title>
+<link rel="stylesheet" href="css/pison.css">
 </head>
 <body>
 
-<header><h1>School News</h1></header>
+<header>
+<div class="logo"><img src="logo.png"><h2>PISON SCHOOL</h2></div>
+<div class="icons"><span onclick="toggleSearch()">🔍</span><span onclick="toggleMenu()">☰</span></div>
+</header>
 
-<nav class="navbar">
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="admission.html">Admission</a>
-        <a href="programs.html">Programs</a>
-        <a href="staff.html">Staff</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button onclick="searchPage()">Search</button>
-    </div>
+<div class="search-box" id="searchBox"><input type="text" placeholder="Search..."></div>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="news.html">News</a>
 </nav>
 
-<section class="content">
-    <p>📢 Admission for 2025 is now open.</p>
-    <p>📅 School reopens January 2025.</p>
-</section>
+<div class="container">
+<h2>School News & Announcements</h2>
+<p>Upcoming exams, meetings and school events will be posted here.</p>
+</div>
 
-<!-- Admission Form -->
-<section class="form-section">
-    <h2>Online Admission Form</h2>
-    <form>
-        <label>Student Full Name</label>
-        <input type="text" placeholder="Enter student name" required>
-        <label>Date of Birth</label>
-        <input type="date" required>
-        <label>Class Applying For</label>
-        <select required>
-            <option value="">Select Class</option>
-            <option>Pre-Primary</option>
-            <option>Standard One</option>
-            <option>Standard Two</option>
-            <option>Standard Three</option>
-            <option>Standard Four</option>
-            <option>Standard Five</option>
-            <option>Standard Six</option>
-            <option>Standard Seven</option>
-        </select>
-        <label>Parent / Guardian Name</label>
-        <input type="text" required>
-        <label>Phone Number</label>
-        <input type="tel" placeholder="+255..." required>
-        <label>Email Address</label>
-        <input type="email">
-        <label>Additional Information</label>
-        <textarea rows="4"></textarea>
-        <button type="submit">Submit Application</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2025 Pison Pre/Primary School</p>
-</footer>
+<div class="footer">Pison Pre & Primary School</div>
 
 <script>
-const pages = [
-    { url: "index.html", keywords: ["home", "welcome"] },
-    { url: "admission.html", keywords: ["admission", "apply", "register"] },
-    { url: "programs.html", keywords: ["programs", "classes"] },
-    { url: "staff.html", keywords: ["staff", "teachers"] },
-    { url: "news.html", keywords: ["news", "events"] },
-    { url: "contact.html", keywords: ["contact", "phone", "email"] }
-];
-
-function searchPage() {
-    const q = document.getElementById("searchInput").value.toLowerCase();
-    for (let p of pages) {
-        if (p.keywords.some(k => k.includes(q))) {
-            location.href = p.url;
-            return;
-        }
-    }
-    alert("No page found.");
-}
+function toggleMenu(){document.getElementById("navMenu").classList.toggle("show");}
+function toggleSearch(){document.getElementById("searchBox").classList.toggle("show");}
 </script>
 
 </body>

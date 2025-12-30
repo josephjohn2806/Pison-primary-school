@@ -1,4 +1,6 @@
-/* ===== GLOBAL STYLES ===== */
+/* =============================
+   GLOBAL SETTINGS
+============================= */
 * {
     margin: 0;
     padding: 0;
@@ -7,212 +9,214 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #333;
+    background: #f5f7fb;
+    color: #222;
     line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
+/* =============================
+   HEADER
+============================= */
 header {
-    background: linear-gradient(135deg, #0b5394, #073763);
+    background: linear-gradient(90deg, #8b0000, #c10000);
     color: white;
-    padding: 30px 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #073763;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 25px;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.nav-links a {
-    color: #ffffff;
-    margin-right: 18px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffd966;
-}
-
-/* ===== SEARCH BOX ===== */
-.search-box {
+.logo {
     display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 55px;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.logo h2 {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.icons span {
+    font-size: 26px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icons span:hover {
+    transform: scale(1.2);
+}
+
+/* =============================
+   SEARCH BAR
+============================= */
+.search-box {
+    background: white;
+    padding: 12px;
+    display: none;
+    border-bottom: 2px solid #c10000;
+}
+
+.search-box.show {
+    display: block;
 }
 
 .search-box input {
-    padding: 7px 10px;
-    border: none;
-    outline: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 0.9rem;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.search-box button {
-    padding: 7px 14px;
-    border: none;
-    background: #ffd966;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0 4px 4px 0;
-    transition: background 0.3s;
+/* =============================
+   NAVIGATION
+============================= */
+nav {
+    background: #ffcc00;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-.search-box button:hover {
-    background: #ffcc33;
+nav a {
+    color: #111;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    background: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-bottom: 4px solid #073763;
+nav a:hover {
+    background: #8b0000;
+    color: white;
 }
 
-.hero h2 {
-    font-size: 1.9rem;
-    margin-bottom: 10px;
-    color: #073763;
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.show {
+        display: flex;
+    }
 }
 
-/* ===== CONTENT SECTIONS ===== */
-.content {
-    background: white;
-    padding: 30px;
-    margin: 30px auto;
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* =============================
+   PAGE CONTAINER
+============================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
-.content h2,
-.content h3 {
-    color: #073763;
-    margin-bottom: 10px;
-}
-
-.content ul,
-.content ol {
-    margin-left: 20px;
+.container h2 {
+    color: #8b0000;
     margin-bottom: 15px;
+    font-size: 28px;
 }
 
-.content li {
+.container p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* =============================
+   CARDS
+============================= */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+/* =============================
+   LISTS
+============================= */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
     margin-bottom: 8px;
 }
 
-/* ===== ADMISSION FORM ===== */
-.form-section {
-    background: #eaf1fb;
-    padding: 40px 20px;
-    margin: 30px auto;
-    max-width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+/* =============================
+   FORMS
+============================= */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.form-section h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #073763;
-}
-
-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-form input,
-form select,
-form textarea {
+input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 1rem;
-    transition: border 0.3s, box-shadow 0.3s;
+    font-size: 15px;
 }
 
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border: 1px solid #073763;
-    box-shadow: 0 0 5px rgba(7,55,99,0.2);
+input:focus, select:focus, textarea:focus {
+    border-color: #c10000;
     outline: none;
 }
 
-form button {
-    margin-top: 20px;
-    background: #073763;
+button {
+    background: linear-gradient(90deg, #8b0000, #c10000);
     color: white;
-    padding: 12px;
     border: none;
+    padding: 14px;
     width: 100%;
     font-size: 16px;
-    cursor: pointer;
     border-radius: 6px;
-    transition: background 0.3s;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-form button:hover {
-    background: #0b5394;
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== FOOTER ===== */
-footer {
-    background: #073763;
+/* =============================
+   LINKS
+============================= */
+a {
+    color: #8b0000;
+}
+
+/* =============================
+   FOOTER
+============================= */
+.footer {
+    background: #111;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    font-size: 14px;
     margin-top: 40px;
-    font-size: 0.95rem;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .nav-links {
-        text-align: center;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        margin: 5px 10px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-}
