@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Useful Links</title>
+<title>Gallery - Pison School</title>
 <link rel="stylesheet" href="css/pison.css">
 </head>
 <body>
@@ -14,21 +14,25 @@
 <div class="search-box" id="searchBox"><input type="text" placeholder="Search..."></div>
 
 <nav id="navMenu">
-<a href="index.html">Home</a>
-<a href="links.html">Links</a>
+<a href="index.html">Home</a><a href="contact.html">Contact</a><a href="admission.html">Admission</a>
+<a href="news.html">News</a><a href="programs.html">Programs</a><a href="staff.html">Staff</a>
+<a href="funding.html">Funding</a><a href="donors.html">Donors</a><a href="links.html">Gallery</a>
 </nav>
 
 <div class="container">
-<h2>Useful Education Links</h2>
-<a href="https://www.moe.go.tz" target="_blank">Ministry of Education</a><br><br>
-<a href="https://www.tamisemi.go.tz" target="_blank">TAMISEMI</a>
+<h2>School Photo Gallery</h2>
+<div class="card">
+<img src="school1.jpg" width="30%" style="margin-right:10px;">
+<img src="school2.jpg" width="30%" style="margin-right:10px;">
+<img src="school3.jpg" width="30%">
+</div>
 </div>
 
-<div class="footer">Pison Pre & Primary School</div>
+<div class="footer">© 2025 Pison Pre & Primary School</div>
 
 <script>
-function toggleMenu(){document.getElementById("navMenu").classList.toggle("show");}
-function toggleSearch(){document.getElementById("searchBox").classList.toggle("show");}
+function toggleMenu(){navMenu.classList.toggle("show")}
+function toggleSearch(){searchBox.classList.toggle("show")}
 </script>
 
 </body>

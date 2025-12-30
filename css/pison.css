@@ -220,3 +220,113 @@ a {
     margin-top: 40px;
 }
 
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:"Segoe UI",Arial;
+background:#f3f6fb;
+color:#222;
+}
+
+/* HEADER */
+header{
+background:linear-gradient(90deg,#003366,#0059b3);
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 10px rgba(0,0,0,.2)
+}
+
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:55px;background:white;padding:5px;border-radius:8px}
+.icons span{font-size:26px;margin-left:15px;cursor:pointer}
+
+/* SEARCH */
+.search-box{display:none;background:white;padding:10px;border-bottom:3px solid #ffcc00}
+.search-box.show{display:block}
+.search-box input{width:100%;padding:10px}
+
+/* NAV */
+nav{
+background:#ffcc00;
+display:flex;
+justify-content:center;
+flex-wrap:wrap
+}
+nav a{
+padding:14px 18px;
+text-decoration:none;
+color:#003366;
+font-weight:bold
+}
+nav a:hover{background:#003366;color:white}
+
+@media(max-width:768px){
+nav{display:none;flex-direction:column}
+nav.show{display:flex}
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(rgba(0,0,50,.6),rgba(0,0,50,.6)),url("school.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:120px 20px
+}
+.hero h1{font-size:48px}
+.hero p{font-size:22px}
+
+/* CONTENT */
+.container{max-width:1100px;margin:auto;padding:40px 20px}
+h2{color:#003366;margin-bottom:10px}
+
+/* CARDS */
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+margin-bottom:20px
+}
+
+/* FORM */
+form{
+background:white;
+padding:30px;
+max-width:650px;
+margin:auto;
+border-radius:12px;
+box-shadow:0 15px 35px rgba(0,0,0,.15)
+}
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc
+}
+button{
+background:#003366;
+color:white;
+border:none;
+padding:14px;
+width:100%;
+font-size:16px;
+border-radius:6px
+}
+
+/* FOOTER */
+.footer{
+background:#002244;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px
+}
+
+

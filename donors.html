@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Our Donors</title>
-<link rel="stylesheet" href="css/pison.css">
+<title>Donors - Pison School</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,16 +14,24 @@
 <div class="search-box" id="searchBox"><input type="text" placeholder="Search..."></div>
 
 <nav id="navMenu">
-<a href="index.html">Home</a>
-<a href="donors.html">Donors</a>
+<a href="index.html">Home</a><a href="contact.html">Contact</a><a href="admission.html">Admission</a>
+<a href="news.html">News</a><a href="programs.html">Programs</a><a href="staff.html">Staff</a>
+<a href="funding.html">Funding</a><a href="donors.html">Donors</a><a href="links.html">Gallery</a>
 </nav>
 
 <div class="container">
 <h2>Supporting Donors</h2>
-<p>We thank all individuals and organizations who support our children’s education.</p>
+<div class="card">
+<p>We sincerely thank all individuals and organizations who support our school through donations, sponsorships, and volunteering.</p>
+</div>
 </div>
 
-<div class="footer">Pison Pre & Primary School</div>
+<div class="footer">© 2025 Pison Pre & Primary School</div>
 
 <script>
-function toggleMenu(){document.getElementById
+function toggleMenu(){navMenu.classList.toggle("show")}
+function toggleSearch(){searchBox.classList.toggle("show")}
+</script>
+
+</body>
+</html>

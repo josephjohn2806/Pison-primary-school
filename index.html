@@ -7,59 +7,40 @@
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png">
-    <h2>PISON SCHOOL</h2>
-  </div>
-  <div class="icons">
-    <span onclick="toggleSearch()">🔍</span>
-    <span onclick="toggleMenu()">☰</span>
-  </div>
+<div class="logo"><img src="logo.png"><h2>PISON SCHOOL</h2></div>
+<div class="icons"><span onclick="toggleSearch()">🔍</span><span onclick="toggleMenu()">☰</span></div>
 </header>
 
-<div class="search-box" id="searchBox">
-  <input type="text" placeholder="Search...">
-</div>
+<div class="search-box" id="searchBox"><input type="text" placeholder="Search..."></div>
 
 <nav id="navMenu">
-  <a href="index.html">Home</a>
-  <a href="contact.html">Contact</a>
-  <a href="admission.html">Admission</a>
-  <a href="news.html">News</a>
-  <a href="programs.html">Programs</a>
-  <a href="staff.html">Staff</a>
-  <a href="funding.html">Funding</a>
-  <a href="donors.html">Donors</a>
-  <a href="links.html">Links</a>
+<a href="index.html">Home</a>
+<a href="contact.html">Contact</a>
+<a href="admission.html">Admission</a>
+<a href="news.html">News</a>
+<a href="programs.html">Programs</a>
+<a href="staff.html">Staff</a>
+<a href="funding.html">Funding</a>
+<a href="donors.html">Donors</a>
+<a href="links.html">Gallery</a>
 </nav>
 
-<div class="container">
-<h2>Welcome to Pison Pre & Primary School</h2>
-<p><strong>Motto:</strong> Education is Gold</p>
-
-<h2>Vision</h2>
-<p>To ensure quality and affordable education is provided to all deserving children without discrimination.</p>
-
-<h2>Mission</h2>
-<p>To offer holistic education focusing on mental, spiritual and social growth of every child.</p>
-
-<h2>Core Values</h2>
-<ul>
-<li>Good customer care</li>
-<li>Integrity and diligence</li>
-<li>Fair treatment</li>
-<li>Discipline</li>
-<li>Creativity</li>
-<li>Timely problem solving</li>
-</ul>
+<div class="hero">
+<h1>Welcome to Pison Pre & Primary School</h1>
+<p>River of Knowledge – Education is Gold</p>
 </div>
 
-<div class="footer">© 2025 Pison Pre & Primary School – River of Knowledge</div>
+<div class="container">
+<div class="card"><h2>Vision</h2><p>To provide quality and affordable education to all children.</p></div>
+<div class="card"><h2>Mission</h2><p>To nurture learners academically, spiritually and socially.</p></div>
+<div class="card"><h2>Core Values</h2><p>Integrity, Discipline, Excellence, Respect, Creativity.</p></div>
+</div>
+
+<div class="footer">© 2025 Pison Pre & Primary School</div>
 
 <script>
-function toggleMenu(){document.getElementById("navMenu").classList.toggle("show");}
-function toggleSearch(){document.getElementById("searchBox").classList.toggle("show");}
+function toggleMenu(){navMenu.classList.toggle("show")}
+function toggleSearch(){searchBox.classList.toggle("show")}
 </script>
-
 </body>
 </html>
