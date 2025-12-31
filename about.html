@@ -1,199 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About Us | Pison Pre & Primary School</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/pison.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement">
-🏫 About Pison Pre & Primary School | Education is Gold
-</div>
+    <div class="announcement">
+        School Motto: "Education is Gold"
+    </div>
 
-<!-- HEADER -->
-<header class="top-header">
-<div class="header-container">
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
 
-<div class="school-brand">
-<img src="images/pisen.jpg" alt="School Logo">
-<div>
-<h1>Pison Pre & Primary School</h1>
-<span>River of Knowledge</span>
-</div>
-</div>
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text"></span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<nav class="school-menu">
-<div class="search-icon" onclick="openSearch()">🔍</div>
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="admission.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+        <a href="academics.html">Academics</a>
+        <a href="news".html">News</a>
+        
+    </nav>
 
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</nav>
+    <section class="slider" style="height: 50vh;">
+        <div class="slide active" style="background-image: url('images/about-hero.jpg');">
+            <div class="slide-content">
+                <h2>Our Identity</h2>
+                <p>Rooted in values, driven by excellence, and dedicated to the holistic growth of every child.</p>
+            </div>
+        </div>
+    </section>
 
-</div>
-</header>
+    <section class="section">
+        <div class="container">
+            <div class="cards">
+                <div class="card">
+                    <i class="fa-solid fa-eye" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Vision Statement</h3>
+                    <p>To ensure Quality and Affordable Education is provided to all deserving children without discrimination of any kind to enable child to become the best country serving citizen.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-bullseye" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>Mission Statement</h3>
+                    <p>Through Modern Education Pedagogy, to offer holistic education focusing on the Mental, Spiritual and Social faculties of a child.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay" onclick="closeAll()"></div>
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <h2 style="color: var(--primary); margin-bottom: 40px;">School Core Values</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">
+                
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">1. Good Customer Care</strong>
+                </div>
 
-<!-- SLIDE MENU -->
-<div class="slide-menu" id="slideMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="academic.html">Academics</a>
-<a href="admission.html">Admissions</a>
-<a href="contact.html" class="contact-btn">Contact</a>
-</div>
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">2. Integrity and Diligence</strong>
+                </div>
 
-<!-- SEARCH POPUP -->
-<div class="search-popup" id="searchPopup">
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Search the website..." onkeyup="searchPage()">
-<button onclick="closeSearch()">Close</button>
-</div>
-</div>
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">3. Free and Fair Treatment</strong>
+                    <span style="font-size: 0.85rem;">To Pupils and Parents</span>
+                </div>
 
-<!-- HERO -->
-<section class="page-hero searchable">
-<h2>About Our School</h2>
-<p>Building a strong foundation for lifelong learning</p>
-</section>
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">4. Good Neighbourhood</strong>
+                </div>
 
-<!-- ABOUT INTRO -->
-<section class="section searchable">
-<h2>Who We Are</h2>
-<p>
-Pison Pre & Primary School is a nurturing learning community dedicated to providing
-quality and affordable education to all deserving children without discrimination.
-We focus on academic excellence, character development, and holistic growth to
-prepare pupils for a successful future.
-</p>
-</section>
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">5. Discipline and Fairness</strong>
+                    <span style="font-size: 0.85rem;">Serving with discipline.</span>
+                </div>
 
-<!-- VISION / MISSION / MOTTO -->
-<section class="section light searchable">
-<h2>Our Vision, Mission & Motto</h2>
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">6. Creativity and Tolerance</strong>
+                    <span style="font-size: 0.85rem;">In undertaking the duty.</span>
+                </div>
 
-<div class="cards">
+                <div style="padding: 20px; border-left: 4px solid var(--secondary); background: var(--light); border-radius: 0 8px 8px 0;">
+                    <strong style="display: block; color: var(--primary);">7. Timely Problem Solving</strong>
+                </div>
 
-<div class="card">
-<h3>Our Vision</h3>
-<p>
-To ensure quality and affordable education is provided to all deserving children
-without discrimination of any kind, enabling every child to become the best and
-a responsible citizen of the country.
-</p>
-</div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Our Mission</h3>
-<p>
-Through modern education pedagogy, to offer holistic education focusing on the
-mental, spiritual, and social faculties of a child.
-</p>
-</div>
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Motto: Education is Gold</p>
+    </footer>
 
-<div class="card">
-<h3>School Motto</h3>
-<p><strong>“Education is Gold”</strong></p>
-</div>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
 
-</div>
-</section>
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
 
-<!-- CORE VALUES -->
-<section class="section searchable">
-<h2>Our Core Values</h2>
-<ul class="styled-list">
-<li>✔ Good Customer Care</li>
-<li>✔ Integrity and Diligence</li>
-<li>✔ Free and Fair Treatment to Pupils and Parents</li>
-<li>✔ Good Neighbourhood</li>
-<li>✔ Serving with Discipline and Fairness</li>
-<li>✔ Creativity and Tolerance in Undertaking Duties</li>
-<li>✔ Timely Problem Solving</li>
-</ul>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section class="section light searchable">
-<h2>Why Choose Pison Pre & Primary School</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Qualified Teachers</h3>
-<p>Experienced and dedicated teachers using modern teaching methods.</p>
-</div>
-
-<div class="card">
-<h3>Safe Learning Environment</h3>
-<p>A caring, secure, and child-friendly school atmosphere.</p>
-</div>
-
-<div class="card">
-<h3>Holistic Education</h3>
-<p>Balanced focus on academics, discipline, creativity, and social skills.</p>
-</div>
-</div>
-</section>
-
-<!-- CONTACT CTA -->
-<section class="section searchable">
-<h2>Visit or Contact Us</h2>
-<p>
-We welcome parents, guardians, partners, and visitors to learn more about our school.
-</p>
-<p>📍 Tanzania</p>
-<p>📞 +255 XXX XXX XXX</p>
-<p>✉ info@pisonschool.ac.tz</p>
-
-<a href="contact.html" class="hero-btn">Get in Touch</a>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-© 2025 Pison Pre & Primary School | About Us
-</footer>
-
-<!-- ======================
-     SHARED JAVASCRIPT
-====================== -->
-<script>
-const menu = document.getElementById("slideMenu");
-const overlay = document.getElementById("overlay");
-const search = document.getElementById("searchPopup");
-
-function toggleMenu(){
-menu.classList.toggle("open");
-overlay.classList.toggle("show");
-}
-
-function closeAll(){
-menu.classList.remove("open");
-overlay.classList.remove("show");
-closeSearch();
-}
-
-function openSearch(){ search.classList.add("open"); }
-function closeSearch(){ search.classList.remove("open"); }
-
-function searchPage(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-document.querySelectorAll(".searchable").forEach(section => {
-section.style.display = section.innerText.toLowerCase().includes(input)
-? "block" : "none";
-});
-}
-
-document.addEventListener("keydown", e => {
-if(e.key === "Escape") closeAll();
-});
-</script>
-
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !sideNav.contains(e.target)) {
+                sideNav.classList.remove('open');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
+

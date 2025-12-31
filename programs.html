@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement">
+        Motto: "Education is Gold"
+    </div>
+
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
+
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text">Menu</span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="programs.html">Programs</a>
+        <a href="staff.html">Our Staff</a>
+        <a href="contact.html">Contact</a>
+        <a href="programs.html">Programs</a>
+        <a href="news.html">News</a>
+        
+    </nav>
+
+    <section class="slider" style="height: 45vh;">
+        <div class="slide active" style="background-image: url('images/programs-hero.jpg');">
+            <div class="slide-content">
+                <h2>Our Special Programs</h2>
+                <p>Ensuring Quality and Affordable Education for every deserving child.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="background: var(--white); padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; max-width: 1000px; margin: 0 auto;">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Sponsorship for Children in Need</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 30px;">
+                    In line with our vision to provide education without discrimination, Pison Pre & Primary School proudly sponsors children with special needs and those from underprivileged backgrounds. We believe that financial constraints should never hinder a child from becoming a great citizen of our country.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <div style="padding: 20px; background: var(--light); border-radius: 12px; border-top: 4px solid var(--accent);">
+                    <i class="fa-solid fa-hand-holding-heart" style="font-size: 2rem; color: var(--accent); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 600;">Full Tuition Support</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light); border-radius: 12px; border-top: 4px solid var(--secondary);">
+                        <i class="fa-solid fa-kit-medical" style="font-size: 2rem; color: var(--secondary); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 600;">Special Needs Resources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--primary); color: white;">
+        <div class="container">
+            <h2 style="color: var(--secondary); margin-bottom: 20px;">Support Our Mission</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px; opacity: 0.9;">
+                We invite all donors and partners to join us in our "Education is Gold" initiative. Your support helps us maintain free and fair treatment for pupils and provides the creativity needed to undertake our duty.
+            </p>
+            <a href="contact.html" class="hero-btn">How to Donate</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Our Partners</h2>
+            <p style="margin-bottom: 30px;">Visit our partner institution to see more of our educational network.</p>
+            <div class="card" style="max-width: 500px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+                <div style="text-align: left;">
+                    <h3 style="margin-bottom: 5px;"> School Name</h3>
+                    <p style="font-size: 0.85rem; color: #666;">Secondary Education Excellence</p>
+                </div>
+                <a href="https://link-to-another-school.com" target="_blank" style="color: var(--primary); font-size: 1.5rem;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Motto: Education is Gold</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
+
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !sideNav.contains(e.target)) {
+                sideNav.classList.remove('open');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+

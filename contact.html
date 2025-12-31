@@ -1,163 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Contact Us | Pison Pre & Primary School</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/pison.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-📞 Contact Pison Pre & Primary School | We’re Here to Help
-</div>
+    <div class="announcement">
+        Enrollment for 2026 Academic Year is Now Open! 
+    </div>
 
-<!-- HEADER -->
-<header class="top-header">
-<div class="header-container">
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
 
-<div class="school-brand">
-<img src="images/pisen.jpg" alt="School Logo">
-<div>
-<h1>Pison Pre & Primary School</h1>
-<span>River of Knowledge</span>
-</div>
-</div>
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text"></span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<nav class="school-menu">
-<div class="search-icon" onclick="openSearch()">🔍</div>
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</nav>
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+        <a href="academics.html">Academics</a>
+            <a href="news.html">News</a>
+    </nav>
 
-</div>
-</header>
+    <section class="slider" style="height: 45vh;">
+        <div class="slide active" style="background-image: url('images/contact-hero.jpg');">
+            <div class="slide-content">
+                <h2>Get In Touch</h2>
+                <p>Have questions about enrollment or our programs? Reach out to our dedicated team.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay" onclick="closeAll()"></div>
+    <section class="section">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; text-align: left;">
+                
+                <div style="flex: 1; min-width: 300px; background: var(--primary); color: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                    <h3 style="color: var(--secondary); margin-bottom: 25px; font-family: 'Poppins';">Our Office</h3>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-weight: 700; margin-bottom: 5px;"><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: var(--secondary);"></i> School Address</p>
+                        <p style="opacity: 0.9;">Pison School Campus,<br>[Your Street/Area],<br>[City, Tanzania]</p>
+                    </div>
 
-<!-- SLIDE MENU -->
-<div class="slide-menu" id="slideMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="academic.html">Academics</a>
-<a href="admission.html">Admissions</a>
-<a href="contact.html" class="contact-btn">Contact</a>
-</div>
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-weight: 700; margin-bottom: 5px;"><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> Phone Enquiries</p>
+                        <p style="opacity: 0.9;">+255 (0) 123 456 789</p>
+                        <p style="opacity: 0.9;">+255 (0) 987 654 321</p>
+                    </div>
 
-<!-- SEARCH POPUP -->
-<div class="search-popup" id="searchPopup">
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Search the website..." onkeyup="searchPage()">
-<button onclick="closeSearch()">Close</button>
-</div>
-</div>
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-weight: 700; margin-bottom: 5px;"><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> Email Address</p>
+                        <p style="opacity: 0.9;">info@pisonschool.ac.tz</p>
+                    </div>
 
-<!-- HERO -->
-<section class="page-hero searchable">
-<h2>Contact Us</h2>
-<p>We are always happy to hear from you</p>
-</section>
+                    <div style="padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <p style="font-size: 0.85rem; opacity: 0.7;">Office Hours: Mon - Fri, 8:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
 
-<!-- CONTACT DETAILS -->
-<section class="section searchable">
-<h2>Get in Touch</h2>
+                <div style="flex: 1.5; min-width: 300px; background: var(--white); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 10px; font-family: 'Poppins';">Admission Inquiry Form</h3>
+                    <p style="margin-bottom: 25px; font-size: 0.9rem; color: #666;">Fill in the details below and we will contact you shortly.</p>
+                    
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem;">Parent / Guardian Name</label>
+                                <input type="text" placeholder="Full Name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem;">Mobile Phone Number</label>
+                                <input type="tel" placeholder="07XXXXXXXX" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                            </div>
+                        </div>
 
-<div class="cards">
-<div class="card">
-<h3>📍 Location</h3>
-<p>Tanzania</p>
-</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem;">Student's Name</label>
+                                <input type="text" placeholder="Full Name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem;">Class Level</label>
+                                <select required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; background: white;">
+                                    <option value="" disabled selected>Select Grade</option>
+                                    <option>Pre-Primary</option>
+                                    <option>Standard 1 - 7</option>
+                                </select>
+                            </div>
+                        </div>
 
-<div class="card">
-<h3>📞 Phone</h3>
-<p>+255 XXX XXX XXX</p>
-</div>
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem;">Additional Information</label>
+                            <textarea placeholder="Tell us more about your child or ask a question..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; height: 100px; resize: none;"></textarea>
+                        </div>
 
-<div class="card">
-<h3>✉ Email</h3>
-<p>info@pisonschool.ac.tz</p>
-</div>
-</div>
-</section>
+                        <button type="submit" class="hero-btn" style="width: 100%; border: none; cursor: pointer;">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
 
-<!-- CONTACT FORM -->
-<section class="section light searchable">
-<h2>Send Us a Message</h2>
+            </div>
+        </div>
+    </section>
 
-<form action="sendmail.php" method="post">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="text" name="subject" placeholder="Subject" required>
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-<button type="submit">Send Message</button>
-</form>
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Education is Gold</p>
+    </footer>
 
-<p style="text-align:center; margin-top:15px;">
-Your message will be sent to our email and securely stored.
-</p>
-</section>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
 
-<!-- MAP -->
-<section class="section searchable">
-<h2>Our Location</h2>
-<div style="width:100%; height:300px; background:#eaeaea; border-radius:10px; display:flex; align-items:center; justify-content:center;">
-<strong>Google Map Placeholder</strong>
-</div>
-</section>
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
 
-<!-- FOOTER -->
-<footer class="footer">
-© 2025 Pison Pre & Primary School | Contact Us
-<br>
-</footer>
-
-<!-- WHATSAPP AUTO GREETING -->
-<a href="https://wa.me/255XXXXXXXXX?text=Hello%20Pison%20Pre%20%26%20Primary%20School.%0A%0AI%20am%20interested%20in%20admissions%2C%20academics%2C%20or%20general%20inquiries.%0A%0APlease%20assist%20me.%0A%0AThank%20you."
-class="whatsapp-chat"
-target="_blank"
-aria-label="Chat with us on WhatsApp">
-💬
-</a>
-
-<!-- ======================
-     JAVASCRIPT
-====================== -->
-<script>
-const menu = document.getElementById("slideMenu");
-const overlay = document.getElementById("overlay");
-const search = document.getElementById("searchPopup");
-
-function toggleMenu(){
-menu.classList.toggle("open");
-overlay.classList.toggle("show");
-}
-
-function closeAll(){
-menu.classList.remove("open");
-overlay.classList.remove("show");
-closeSearch();
-}
-
-function openSearch(){ search.classList.add("open"); }
-function closeSearch(){ search.classList.remove("open"); }
-
-function searchPage(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-document.querySelectorAll(".searchable").forEach(section => {
-section.style.display = section.innerText.toLowerCase().includes(input)
-? "block" : "none";
-});
-}
-
-document.addEventListener("keydown", e => {
-if(e.key === "Escape") closeAll();
-});
-</script>
-
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !sideNav.contains(e.target)) {
+                sideNav.classList.remove('open');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
+

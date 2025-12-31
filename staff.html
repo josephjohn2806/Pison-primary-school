@@ -1,192 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Our Staff | Pison Pre & Primary School</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/pison.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<!-- ANNOUNCEMENT -->
-<div class="announcement">
-👩‍🏫 Meet Our Dedicated Staff | Pison Pre & Primary School
-</div>
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text"></span>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- HEADER -->
-<header class="top-header">
-<div class="header-container">
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="staff.html">Our Staff</a>
+        <a href="contact.html">Contact</a>
+            <a href="academics.html">Academics</a>
+            <a href="news.html">News</a>
+        
+    </nav>
 
-<div class="school-brand">
-<img src="images/pisen.jpg" alt="School Logo">
-<div>
-<h1>Pison Pre & Primary School</h1>
-<span>River of Knowledge</span>
-</div>
-</div>
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 style="color: var(--primary);">Our Dedicated Staff</h2>
+            <p style="margin-bottom: 40px;">Serving with discipline, fairness, and creativity in undertaking the duty.</p>
+            
+            <div class="cards">
+                <div class="card" style="padding: 20px;">
+                    <div style="width: 150px; height: 150px; background: #ddd; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 4px solid var(--secondary);">
+                        <img src="images/staff1.jpg" alt="Headteacher" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="margin-bottom: 5px;">Staff Name</h3>
+                    <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">Headteacher</p>
+                    <p style="font-size: 0.85rem; color: #666;">Dedicated to providing quality education through integrity and diligence.</p>
+                </div>
 
-<nav class="school-menu">
-<div class="search-icon" onclick="openSearch()">🔍</div>
-<div class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</nav>
+                <div class="card" style="padding: 20px;">
+                    <div style="width: 150px; height: 150px; background: #ddd; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 4px solid var(--secondary);">
+                        <img src="images/staff2.jpg" alt="Teacher" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="margin-bottom: 5px;">Staff Name</h3>
+                    <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">Senior Teacher</p>
+                    <p style="font-size: 0.85rem; color: #666;">Fostering creativity and tolerance in every classroom interaction.</p>
+                </div>
 
-</div>
-</header>
+                <div class="card" style="padding: 20px;">
+                    <div style="width: 150px; height: 150px; background: #ddd; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 4px solid var(--secondary);">
+                        <img src="images/staff3.jpg" alt="Admin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="margin-bottom: 5px;">Staff Name</h3>
+                    <p style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">Admissions Officer</p>
+                    <p style="font-size: 0.85rem; color: #666;">Committed to good customer care and timely problem solving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- OVERLAY -->
-<div class="overlay" id="overlay" onclick="closeAll()"></div>
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+    </footer>
 
-<!-- SLIDE MENU -->
-<div class="slide-menu" id="slideMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="academic.html">Academics</a>
-<a href="admission.html">Admissions</a>
-<a href="staff.html">Our Staff</a>
-<a href="contact.html" class="contact-btn">Contact</a>
-</div>
-
-<!-- SEARCH POPUP -->
-<div class="search-popup" id="searchPopup">
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Search the website..." onkeyup="searchPage()">
-<button onclick="closeSearch()">Close</button>
-</div>
-</div>
-
-<!-- HERO -->
-<section class="page-hero searchable">
-<h2>Our Staff</h2>
-<p>Committed professionals shaping future leaders</p>
-</section>
-
-<!-- MANAGEMENT STAFF -->
-<section class="section searchable">
-<h2>School Management</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="images/staff/head-teacher.jpg" alt="Head Teacher" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Head Teacher</h3>
-<p><strong>Name:</strong> Mr / Mrs XXXXX</p>
-<p>Academic leadership and overall school administration.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/deputy-head.jpg" alt="Deputy Head Teacher" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Deputy Head Teacher</h3>
-<p><strong>Name:</strong> Mr / Mrs XXXXX</p>
-<p>Curriculum coordination and student discipline.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/admin.jpg" alt="School Administrator" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>School Administrator</h3>
-<p><strong>Name:</strong> Mr / Mrs XXXXX</p>
-<p>Finance, operations, and records management.</p>
-</div>
-
-</div>
-</section>
-
-<!-- TEACHING STAFF -->
-<section class="section light searchable">
-<h2>Teaching Staff</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="images/staff/pre-primary.jpg" alt="Pre-Primary Teachers" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Pre-Primary Teachers</h3>
-<p>Dedicated educators nurturing early childhood development.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/primary-teachers.jpg" alt="Primary Teachers" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Primary School Teachers</h3>
-<p>Qualified teachers delivering quality competency-based education.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/specialists.jpg" alt="Subject Specialists" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Subject Specialists</h3>
-<p>ICT, Science, Mathematics, Languages, Arts, and Sports.</p>
-</div>
-
-</div>
-</section>
-
-<!-- SUPPORT STAFF -->
-<section class="section searchable">
-<h2>Support Staff</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="images/staff/nurse.jpg" alt="School Nurse" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>School Nurse</h3>
-<p>Ensuring the health and wellbeing of all pupils.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/security.jpg" alt="Security Personnel" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Security Personnel</h3>
-<p>Maintaining safety and order within the school compound.</p>
-</div>
-
-<div class="card">
-<img src="images/staff/caretakers.jpg" alt="Caretakers and Cleaners" style="width:100%; border-radius:8px; margin-bottom:15px;">
-<h3>Cleaners & Caretakers</h3>
-<p>Maintaining cleanliness and school facilities.</p>
-</div>
-
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-© 2025 Pison Pre & Primary School | Our Staff
-</footer>
-
-<!-- ======================
-     JAVASCRIPT
-====================== -->
-<script>
-const menu = document.getElementById("slideMenu");
-const overlay = document.getElementById("overlay");
-const search = document.getElementById("searchPopup");
-
-function toggleMenu(){
-menu.classList.toggle("open");
-overlay.classList.toggle("show");
-}
-
-function closeAll(){
-menu.classList.remove("open");
-overlay.classList.remove("show");
-closeSearch();
-}
-
-function openSearch(){ search.classList.add("open"); }
-function closeSearch(){ search.classList.remove("open"); }
-
-function searchPage(){
-let input = document.getElementById("searchInput").value.toLowerCase();
-document.querySelectorAll(".searchable").forEach(section => {
-section.style.display = section.innerText.toLowerCase().includes(input)
-? "block" : "none";
-});
-}
-
-document.addEventListener("keydown", e => {
-if(e.key === "Escape") closeAll();
-});
-</script>
-
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement">Quality and Affordable Education for All</div>
+
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text"></span>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="staff.html">Our Staff</a>
+        <a href="contact.html">Contact</a>
+        <a href="programs.html">Programs</a>
+        <a href="news.html">News</a>
+        
+        
+    </nav>
+
+    <section class="slider" style="height: 45vh;">
+        <div class="slide active" style="background-image: url('images/academics-hero.jpg');">
+            <div class="slide-content">
+                <h2>Academic Excellence</h2>
+                <p>Nurturing the Mental, Spiritual, and Social faculties of every child.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">Our Holistic Approach</h2>
+            <p style="max-width: 800px; margin: 0 auto 40px;">Guided by modern education pedagogy, we provide a learning environment designed to enable every child to become a top-tier citizen.</p>
+            
+            <div class="cards">
+                <div class="card">
+                    <i class="fa-solid fa-brain" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>Mental Development</h3>
+                    <p>Rigorous curriculum focusing on literacy, numeracy, and critical problem-solving skills.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-dove" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 15px;"></i>
+                    <h3>Spiritual Growth</h3>
+                    <p>Fostering integrity, diligence, and God-fearing values in a non-discriminatory environment.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-users-rays" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                    <h3>Social Faculties</h3>
+                    <p>Promoting good neighbourhood, creativity, and tolerance in all school activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Motto: Education is Gold</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+
+

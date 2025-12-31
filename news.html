@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Support | Pison Pre & Primary School</title>
+    <link rel="stylesheet" href="css/pison.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="announcement">
+        Motto: "Education is Gold" — Supporting Deserving Children
+    </div>
+
+    <header class="top-header">
+        <div class="header-container">
+            <a href="index.html" class="school-brand" style="text-decoration: none;">
+                <img src="images/pisen.jpg" alt="School Logo">
+                <div>
+                    <h1>PISON PRE & PRIMARY</h1>
+                    <span>Education is Gold</span>
+                </div>
+            </a>
+
+            <div class="school-menu">
+                <div class="nav-trigger" id="menuBtn">
+                    <span class="menu-text">Menu</span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="slide-menu" id="sideNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="academics.html">Academics</a>
+        <a href="admission.html">Admissions</a>
+        <a href="news.html">News & Support</a>
+        <a href="contact.html">Contact</a>
+        <a href="programs.html">Program</a>
+        <a href="news.html">News</a>
+        
+        
+    </nav>
+
+    <section class="slider" style="height: 45vh;">
+        <div class="slide active" style="background-image: url('images/news-hero.jpg');">
+            <div class="slide-content">
+                <h2>News & Community Impact</h2>
+                <p>Ensuring quality education reaches every child without discrimination.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; border: 2px solid var(--secondary); padding: 40px; border-radius: var(--radius);">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">A Call to Our Partners & Donors</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">
+                    Our vision is to ensure <strong>Quality and Affordable Education</strong> is provided to all deserving children without discrimination. 
+                    To enable these children to become the best country-serving citizens, we invite donors to support our mission. 
+                    Your contribution helps us uphold our core value of <strong>Free and Fair Treatment</strong> to all pupils.
+            
+                <a href="contact.html" class="hero-btn">Support Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+        <div class="container">
+            <h2 style="color: var(--primary); margin-bottom: 40px; text-align: left;">Latest Updates</h2>
+            
+            <div class="cards">
+                <div class="card">
+                    <div style="color: var(--accent); font-weight: 700; margin-bottom: 10px;">COMMUNITY SUPPORT</div>
+                    <h3>New Scholarship Intake</h3>
+                    <p>In line with our mission, we are identifying children who need financial help to ensure they receive modern education pedagogy.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: block; margin-top: 15px;">Read More →</a>
+                </div>
+
+                <div class="card">
+                    <div style="color: var(--accent); font-weight: 700; margin-bottom: 10px;">SCHOOL PRIDE</div>
+                    <h3>Integrity and Diligence</h3>
+                    <p>Our staff continues to serve with discipline and fairness, upholding our core values in every classroom.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: block; margin-top: 15px;">Read More →</a>
+                </div>
+
+                <div class="card">
+                    <div style="color: var(--accent); font-weight: 700; margin-bottom: 10px;">ADMINISTRATION</div>
+                    <h3>Timely Problem Solving</h3>
+                    <p>We are implementing new systems to ensure better customer care and timely solutions for our parents and pupils.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: block; margin-top: 15px;">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Motto: Education is Gold</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const hamburger = document.querySelector('.hamburger');
+
+        menuBtn.addEventListener('click', () => {
+            sideNav.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !sideNav.contains(e.target)) {
+                sideNav.classList.remove('open');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
