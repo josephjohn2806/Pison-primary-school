@@ -1,36 +1,127 @@
 <!DOCTYPE html>
-<html>
-<head><title>Admission</title><link rel="stylesheet" href="css/pison.css"></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admissions | Pison School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/pison.css">
+</head>
 <body>
 
-<header><div class="logo"><img src="logo.png"><h2>PISON SCHOOL</h2></div>
-<div class="icons"><span onclick="toggleSearch()">🔍</span><span onclick="toggleMenu()">☰</span></div></header>
+<!-- HEADER -->
+<header class="top-header">
+<div class="header-container">
 
-<div class="search-box" id="searchBox"><input type="text" placeholder="Search..."></div>
-
-<nav id="navMenu">
-<a href="index.html">Home</a><a href="contact.html">Contact</a><a href="admission.html">Admission</a>
-<a href="news.html">News</a><a href="programs.html">Programs</a><a href="staff.html">Staff</a>
-<a href="funding.html">Funding</a><a href="donors.html">Donors</a><a href="links.html">Gallery</a>
-</nav>
-
-<div class="container">
-<h2>Online Admission Form</h2>
-<form>
-<input placeholder="Student Name" required>
-<input type="date" required>
-<select><option>Pre-Primary</option><option>Standard I</option><option>Standard II</option></select>
-<input placeholder="Parent Name">
-<input placeholder="Phone Number">
-<textarea placeholder="Address"></textarea>
-<button>Submit</button>
-</form>
+<div class="school-brand">
+<h1>Pison School</h1>
+<span>Admissions</span>
 </div>
 
-<div class="footer">Pison School</div>
+<nav class="school-menu">
+<div class="search-icon" onclick="openSearch()">🔍</div>
+
+<div class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
+
+</div>
+</header>
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<!-- SLIDE MENU -->
+<div class="slide-menu" id="slideMenu">
+<a href="index.html">Home</a>
+<a href="#apply">Apply Online</a>
+<a href="#fees">Fee Structure</a>
+<a href="#calendar">School Calendar</a>
+</div>
+
+<!-- SEARCH -->
+<div class="search-popup" id="searchPopup">
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search admissions..." onkeyup="searchPage()">
+<button onclick="closeSearch()">Close</button>
+</div>
+</div>
+
+<!-- APPLY -->
+<section id="apply" class="section searchable">
+<h2>Online Admission Form</h2>
+
+<form class="admission-form">
+<input type="text" placeholder="Student Full Name" required>
+<input type="email" placeholder="Parent / Guardian Email" required>
+<input type="tel" placeholder="Phone Number" required>
+
+<select required>
+<option value="">Select Class</option>
+<option>Pre-School</option>
+<option>Primary School</option>
+</select>
+
+<button type="submit">Submit Application</button>
+</form>
+</section>
+
+<!-- FEES -->
+<section id="fees" class="section light searchable">
+<h2>Fee Structure</h2>
+<p>Pre-School: TZS xxxx per term</p>
+<p>Primary School: TZS xxxx per term</p>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar" class="section searchable">
+<h2>School Calendar</h2>
+<p>Term 1: January – April</p>
+<p>Term 2: May – August</p>
+<p>Term 3: September – December</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+© 2025 Pison Pre & Primary School
+</footer>
+
+<!-- SCRIPT -->
 <script>
-function toggleMenu(){navMenu.classList.toggle("show")}
-function toggleSearch(){searchBox.classList.toggle("show")}
+const menu = document.getElementById("slideMenu");
+const overlay = document.getElementById("overlay");
+const hamburger = document.getElementById("hamburger");
+const search = document.getElementById("searchPopup");
+
+function toggleMenu(){
+menu.classList.toggle("open");
+overlay.classList.toggle("show");
+hamburger.classList.toggle("active");
+}
+
+function closeAll(){
+menu.classList.remove("open");
+overlay.classList.remove("show");
+hamburger.classList.remove("active");
+closeSearch();
+}
+
+function openSearch(){ search.classList.add("open"); }
+function closeSearch(){ search.classList.remove("open"); }
+
+function searchPage(){
+let input = document.getElementById("searchInput").value.toLowerCase();
+document.querySelectorAll(".searchable").forEach(section => {
+section.style.display = section.innerText.toLowerCase().includes(input)
+? "block" : "none";
+});
+}
+
+document.addEventListener("keydown", e => {
+if(e.key === "Escape") closeAll();
+});
 </script>
+
 </body>
 </html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Academics | Pison Pre & Primary School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/pison.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+🎓 Quality Academics | Supporting Every Learner
+</div>
+
+<!-- HEADER -->
+<header class="top-header">
+<div class="header-container">
+
+<div class="school-brand">
+<img src="images/pisen.jpg" alt="School Logo">
+<div>
+<h1>Pison Pre & Primary School</h1>
+<span>River of Knowledge</span>
+</div>
+</div>
+
+<nav class="school-menu">
+<div class="search-icon" onclick="openSearch()">🔍</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</nav>
+
+</div>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<!-- SLIDE MENU -->
+<div class="slide-menu" id="slideMenu">
+<a href="index.html">Home</a>
+<a href="academic.html">Academics</a>
+<a href="admission.html">Admissions</a>
+<a href="#support">Student Support</a>
+<a href="#donate" class="contact-btn">Donate</a>
+</div>
+
+<!-- SEARCH POPUP -->
+<div class="search-popup" id="searchPopup">
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search the website..." onkeyup="searchPage()">
+<button onclick="closeSearch()">Close</button>
+</div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero searchable">
+<h2>Academic Excellence & Student Support</h2>
+<p>Providing quality education while ensuring no child is left behind</p>
+</section>
+
+<!-- ACADEMIC OVERVIEW -->
+<section class="section searchable">
+<h2>Our Academic Program</h2>
+<p>
+At Pison Pre & Primary School, our academic program is designed to nurture
+intellectual growth, creativity, and character development.
+We follow a competency-based curriculum that prepares learners for lifelong success.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>Pre-Primary Education</h3>
+<p>Strong foundation through guided learning, play-based activities, and creativity.</p>
+</div>
+
+<div class="card">
+<h3>Primary Education</h3>
+<p>Focused academic excellence, literacy, numeracy, science, and digital skills.</p>
+</div>
+
+<div class="card">
+<h3>Co-Curricular Activities</h3>
+<p>Sports, arts, leadership programs, and community engagement.</p>
+</div>
+</div>
+</section>
+
+<!-- STUDENT FUNDING SUPPORT -->
+<section id="support" class="section light searchable">
+<h2>Student Funding & Financial Support</h2>
+<p>
+We believe that financial challenges should never prevent a child from receiving
+quality education. Our school provides support to students who genuinely need assistance.
+</p>
+
+<ul class="styled-list">
+<li>✔ Partial scholarships for academically promising students</li>
+<li>✔ Fee support for orphaned and vulnerable children</li>
+<li>✔ Emergency academic assistance for families facing hardship</li>
+<li>✔ Community-sponsored education programs</li>
+</ul>
+
+<p>
+Parents or guardians seeking financial support are encouraged to contact the school
+administration for assessment and guidance.
+</p>
+</section>
+
+<!-- DONOR INVITATION -->
+<section id="donate" class="section searchable">
+<h2>Support a Child’s Education</h2>
+<p>
+We invite kind-hearted individuals, organizations, and partners to support our mission
+of empowering young learners. Your contribution helps transform lives through education.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>Become a Donor</h3>
+<p>
+Support school fees, learning materials, uniforms, and meals for students in need.
+</p>
+</div>
+
+<div class="card">
+<h3>Corporate & NGO Partnership</h3>
+<p>
+Partner with us to sponsor programs, infrastructure, and student scholarships.
+</p>
+</div>
+
+<div class="card">
+<h3>Volunteer Support</h3>
+<p>
+Contribute your time, expertise, or resources to help our learners succeed.
+</p>
+</div>
+</div>
+
+<a href="#contact" class="hero-btn">Contact Us to Support</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light searchable">
+<h2>Contact for Academic Support & Donations</h2>
+<p>📍 Tanzania</p>
+<p>📞 +255 XXX XXX XXX</p>
+<p>✉ info@pisonschool.ac.tz</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+© 2025 Pison Pre & Primary School | Academics & Student Support
+</footer>
+
+<!-- ======================
+     SHARED JAVASCRIPT
+====================== -->
+<script>
+/* MENU & SEARCH */
+const menu = document.getElementById("slideMenu");
+const overlay = document.getElementById("overlay");
+const search = document.getElementById("searchPopup");
+
+function toggleMenu(){
+menu.classList.toggle("open");
+overlay.classList.toggle("show");
+}
+
+function closeAll(){
+menu.classList.remove("open");
+overlay.classList.remove("show");
+closeSearch();
+}
+
+function openSearch(){ search.classList.add("open"); }
+function closeSearch(){ search.classList.remove("open"); }
+
+/* SEARCH FUNCTION */
+function searchPage(){
+let input = document.getElementById("searchInput").value.toLowerCase();
+document.querySelectorAll(".searchable").forEach(section => {
+section.style.display = section.innerText.toLowerCase().includes(input)
+? "block" : "none";
+});
+}
+
+document.addEventListener("keydown", e => {
+if(e.key === "Escape") closeAll();
+});
+</script>
+
+</body>
+</html>
