@@ -506,6 +506,12 @@ FORM TITLE
   font-size: 1.8rem;
 }
 
-/* =========================
-FORM FIELDS
-====================
+.footer i {
+font-size: 28px;
+margin:0 12px;
+color:#ffd700;
+margin:0 12px;
+text-decoration: none;
+transition: transform 0.3s;
+
+}
