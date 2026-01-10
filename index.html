@@ -6,16 +6,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/pison.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+<style>
+    /* Specific styles to match the requested image exactly */
+    .slide-menu {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100%;
+        background: #fff;
+        z-index: 1002;
+        transition: 0.4s ease;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    .slide-menu.open { right: 0; }
+    
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .menu-header h2 {
+        color: #2c52a0;
+        font-size: 20px;
+        margin: 0;
+        letter-spacing: 1px;
+    }
+    .close-btn-x {
+        font-size: 24px;
+        color: #2c52a0;
+        cursor: pointer;
+    }
+    .menu-search-box {
+        margin-bottom: 25px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+    }
+    .menu-search-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        color: #888;
+    }
+    .slide-menu a {
+        padding: 12px 0;
+        color: #2c52a0;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 17px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    /* Dots handling for 20 slides */
+    .slider-dots { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .dot { width: 8px; height: 8px; margin: 3px; }
+</style>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT -->
 <div class="announcement">
 📢 Admissions Open for 2026 Academic Year
 </div>
 
-<!-- HEADER -->
 <header class="top-header">
 <div class="header-container">
 
@@ -28,7 +90,6 @@
 </div>
 
 <nav class="school-menu">
-<div class="search-icon" onclick="openSearch()"></div>
 <div class="hamburger" id="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
@@ -39,69 +100,65 @@
 </div>
 </header>
 
-<!-- OVERLAY -->
 <div class="overlay" id="overlay" onclick="closeAll()"></div>
 
-<!-- SLIDE MENU -->
 <div class="slide-menu" id="slideMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About Us</a>
-<a href="programs.html">Academics</a>
-<a href="staff.html">Our Staff</a>
-<a href="admission.html">Admissions</a>
-<a href="contact.html" class="contact-btn">Contact Us</a>
-<a href="academics.html">Academics</a>
-<a href="news.html">News</a>
-        
+    <div class="menu-header">
+        <h2>MENU</h2>
+        <div class="close-btn-x" onclick="closeAll()">&times;</div>
+    </div>
+    
+    <div class="menu-search-box">
+        <input type="text" id="menuSearchInput" placeholder="Search..." onkeyup="searchPage()">
+    </div>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="programs.html">Academics</a>
+    <a href="staff.html">Our Staff</a>
+    <a href="admission.html">Admissions</a>
+    <a href="news.html">News</a>
+    <a href="contact.html" class="contact-btn">Contact Us</a>
 </div>
 
-<!-- SEARCH -->
-<div class="search-popup" id="searchPopup">
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Search..." onkeyup="searchPage()">
-<button onclick="closeSearch()">Close</button>
-</div>
-</div>
 
-<!-- SLIDER -->
 <section class="slider">
 <div class="slide active" style="background-image:url('images/slide1.jpg')">
-<div class="slide-content searchable">
-<h2>Building Knowledge & Character</h2>
-<p>International standard education for future leaders</p>
-<a href="admission.html" class="hero-btn">Apply Now</a>
+<div class="slide-content searchable"><h2>Building Knowledge & Character</h2><p>International standard education</p></div>
 </div>
-</div>
-
 <div class="slide" style="background-image:url('images/slide2.jpg')">
-<div class="slide-content searchable">
-<h2>Quality Learning Environment</h2>
-<p>Safe, caring and inspiring academic atmosphere</p>
-<a href="admission.html" class="hero-btn">Enroll Today</a>
+<div class="slide-content searchable"><h2>Quality Learning</h2><p>Safe and inspiring atmosphere</p></div>
 </div>
-</div>
-
 <div class="slide" style="background-image:url('images/slide3.jpg')">
-<div class="slide-content searchable">
-<h2>Excellence in Education</h2>
-<p>Preparing students for global opportunities</p>
-<a href="admission.html" class="hero-btn">Join Us</a>
+<div class="slide-content searchable"><h2>Excellence in Education</h2><p>Global opportunities</p></div>
 </div>
+<div class="slide" style="background-image:url('images/slide4.jpg')"><div class="slide-content searchable"><h2>Nurturing Talents</h2><p>Discover your child's potential</p></div></div>
+<div class="slide" style="background-image:url('images/slide5.jpg')"><div class="slide-content searchable"><h2>Modern Facilities</h2><p>Equipped for 21st century learning</p></div></div>
+<div class="slide" style="background-image:url('images/slide6.jpg')"><div class="slide-content searchable"><h2>Expert Educators</h2><p>Passionate about teaching</p></div></div>
+<div class="slide" style="background-image:url('images/slide7.jpg')"><div class="slide-content searchable"><h2>Holistic Growth</h2><p>Mind, Body, and Spirit</p></div></div>
+<div class="slide" style="background-image:url('images/slide8.jpg')"><div class="slide-content searchable"><h2>Creative Arts</h2><p>Expressing through colors and music</p></div></div>
+<div class="slide" style="background-image:url('images/slide9.jpg')"><div class="slide-content searchable"><h2>Science & Tech</h2><p>Innovating for the future</p></div></div>
+<div class="slide" style="background-image:url('images/slide10.jpg')"><div class="slide-content searchable"><h2>Sports Excellence</h2><p>Building teamwork and health</p></div></div>
+<div class="slide" style="background-image:url('images/slide11.jpg')"><div class="slide-content searchable"><h2>Strong Values</h2><p>Integrity and Respect</p></div></div>
+<div class="slide" style="background-image:url('images/slide12.jpg')"><div class="slide-content searchable"><h2>Community Focus</h2><p>Growing together</p></div></div>
+<div class="slide" style="background-image:url('images/slide13.jpg')"><div class="slide-content searchable"><h2>Leadership Skills</h2><p>Training tomorrow's leaders today</p></div></div>
+<div class="slide" style="background-image:url('images/slide14.jpg')"><div class="slide-content searchable"><h2>Reading Culture</h2><p>Expanding horizons through books</p></div></div>
+<div class="slide" style="background-image:url('images/slide15.jpg')"><div class="slide-content searchable"><h2>Safe Transport</h2><p>Reliable school bus services</p></div></div>
+<div class="slide" style="background-image:url('images/slide16.jpg')"><div class="slide-content searchable"><h2>Nutritious Meals</h2><p>Healthy fuel for healthy learning</p></div></div>
+<div class="slide" style="background-image:url('images/slide17.jpg')"><div class="slide-content searchable"><h2>Outdoor Play</h2><p>Learning through exploration</p></div></div>
+<div class="slide" style="background-image:url('images/slide18.jpg')"><div class="slide-content searchable"><h2>Mathematics Mastery</h2><p>Logic and problem solving</p></div></div>
+<div class="slide" style="background-image:url('images/slide19.jpg')"><div class="slide-content searchable"><h2>Language Fluency</h2><p>Communicating with confidence</p></div></div>
+<div class="slide" style="background-image:url('images/slide20.jpg')">
+<div class="slide-content searchable"><h2>Join Our Family</h2><p>Admission is open for 2026</p></div>
 </div>
 
 <div class="slider-arrow left" onclick="prevSlide()">&#10094;</div>
 <div class="slider-arrow right" onclick="nextSlide()">&#10095;</div>
 
-<div class="slider-dots">
-<span class="dot active" onclick="goToSlide(0)"></span>
-<span class="dot" onclick="goToSlide(1)"></span>
-<span class="dot" onclick="goToSlide(2)"></span>
-</div>
+<div class="slider-dots" id="dotsWrapper">
+    </div>
 </section>
 
-
-
-<!-- ABOUT SUMMARY -->
 <section class="section searchable">
 <h2>About Our School</h2>
 <p>
@@ -112,7 +169,6 @@ in a safe and caring environment.
 <a href="about.html" class="hero-btn">Read More</a>
 </section>
 
-<!-- PURPOSE -->
 <section class="section light searchable">
 <h2>Our Purpose</h2>
 <p><strong>Vision:</strong> Quality and affordable education for every child.</p>
@@ -120,7 +176,6 @@ in a safe and caring environment.
 <p><strong>Motto:</strong> <em>"Education is Gold"</em></p>
 </section>
 
-<!-- WHY CHOOSE US -->
 <section class="section searchable">
 <h2>Why Choose Us</h2>
 <div class="cards">
@@ -133,7 +188,6 @@ in a safe and caring environment.
 </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section class="section light searchable">
 <h2>Our School Achievements</h2>
 <div class="cards">
@@ -146,7 +200,6 @@ in a safe and caring environment.
 </div>
 </section>
 
-<!-- CERTIFICATIONS -->
 <section class="section searchable">
 <h2>School Certifications & Accreditation</h2>
 <div class="cards">
@@ -159,7 +212,6 @@ in a safe and caring environment.
 </div>
 </section>
 
-<!-- PROGRAMS -->
 <section class="section light searchable">
 <h2>Our Programs</h2>
 <div class="cards">
@@ -169,52 +221,57 @@ in a safe and caring environment.
 </div>
 </section>
 
-<!-- FOOTER -->
-     <footer class="footer">
-        <h3>Follow Us</h3>
-       <div class="social-links">
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
-        <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
-        <p>Motto: Education is Gold</p>
-    </footer>
+<footer class="footer">
+    <h3>Follow Us</h3>
+    <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+    <p>Motto: Education is Gold</p>
+</footer>
 
-<!-- JAVASCRIPT -->
 <script>
 const menu=document.getElementById("slideMenu");
 const overlay=document.getElementById("overlay");
 const hamburger=document.getElementById("hamburger");
-const search=document.getElementById("searchPopup");
+const dotsWrapper=document.getElementById("dotsWrapper");
 
 function toggleMenu(){menu.classList.toggle("open");overlay.classList.toggle("show");hamburger.classList.toggle("active");}
-function closeAll(){menu.classList.remove("open");overlay.classList.remove("show");hamburger.classList.remove("active");closeSearch();}
-function openSearch(){search.classList.add("open");}
-function closeSearch(){search.classList.remove("open");}
+function closeAll(){menu.classList.remove("open");overlay.classList.remove("show");hamburger.classList.remove("active");}
 
 function searchPage(){
-let input=document.getElementById("searchInput").value.toLowerCase();
-document.querySelectorAll(".searchable").forEach(s=>{
-s.style.display=s.innerText.toLowerCase().includes(input)?"block":"none";
-});
+    let input=document.getElementById("menuSearchInput").value.toLowerCase();
+    document.querySelectorAll(".searchable").forEach(s=>{
+        s.style.display=s.innerText.toLowerCase().includes(input)?"block":"none";
+    });
 }
 
 let slides=document.querySelectorAll(".slide");
-let dots=document.querySelectorAll(".dot");
 let currentSlide=0;
-setInterval(nextSlide,5000);
+
+// Auto-generate dots for 20 slides
+slides.forEach((_, i) => {
+    let dot = document.createElement("span");
+    dot.className = i === 0 ? "dot active" : "dot";
+    dot.onclick = () => goToSlide(i);
+    dotsWrapper.appendChild(dot);
+});
+let dots=document.querySelectorAll(".dot");
 
 function showSlide(i){
-slides.forEach(s=>s.classList.remove("active"));
-dots.forEach(d=>d.classList.remove("active"));
-slides[i].classList.add("active");
-dots[i].classList.add("active");
+    slides.forEach(s=>s.classList.remove("active"));
+    dots.forEach(d=>d.classList.remove("active"));
+    slides[i].classList.add("active");
+    dots[i].classList.add("active");
 }
 function nextSlide(){currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);}
 function prevSlide(){currentSlide=(currentSlide-1+slides.length)%slides.length;showSlide(currentSlide);}
 function goToSlide(i){currentSlide=i;showSlide(i);}
+
+setInterval(nextSlide,5000);
 
 let startX=0,endX=0;
 const slider=document.querySelector(".slider");
@@ -224,3 +281,4 @@ slider.addEventListener("touchend",()=>{let d=startX-endX;if(d>50)nextSlide();el
 </script>
 </body>
 </html>
+

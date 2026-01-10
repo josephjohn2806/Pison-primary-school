@@ -6,6 +6,75 @@
     <title>Our Staff | Pison Pre & Primary School</title>
     <link rel="stylesheet" href="css/pison.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Consistent Slide Menu Styling */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            z-index: 1002;
+            transition: 0.4s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+        .slide-menu.open { right: 0; }
+        
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .menu-header h2 {
+            color: #2c52a0;
+            font-size: 20px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        .close-btn-x {
+            font-size: 24px;
+            color: #2c52a0;
+            cursor: pointer;
+        }
+        .menu-search-box {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .menu-search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            color: #888;
+        }
+        .slide-menu a {
+            padding: 12px 0;
+            color: #2c52a0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1001;
+        }
+        .overlay.show { display: block; }
+    </style>
 </head>
 <body>
 
@@ -18,28 +87,38 @@
                     <span>Education is Gold</span>
                 </div>
             </a>
-            <div class="school-menu">
-                <div class="nav-trigger" id="menuBtn">
-                    <span class="menu-text"></span>
-                    <div class="hamburger"><span></span><span></span><span></span></div>
+            <nav class="school-menu">
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
     <nav class="slide-menu" id="sideNav">
+        <div class="menu-header">
+            <h2>MENU</h2>
+            <div class="close-btn-x" onclick="closeAll()">&times;</div>
+        </div>
+        
+        <div class="menu-search-box">
+            <input type="text" id="menuSearchInput" placeholder="Search staff..." onkeyup="searchPage()">
+        </div>
+
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="programs.html">Academics</a>
-        <a href="admission.html">Admissions</a>
+        <a href="academics.html">Academics</a>
+        <a href="programs.html">Programs</a>
         <a href="staff.html">Our Staff</a>
         <a href="contact.html">Contact</a>
-            <a href="academics.html">Academics</a>
-            <a href="news.html">News</a>
-        
+        <a href="news.html">News</a>
     </nav>
 
-    <section class="section" style="background: var(--light);">
+    <section class="section searchable" style="background: var(--light); min-height: 80vh;">
         <div class="container">
             <h2 style="color: var(--primary);">Our Dedicated Staff</h2>
             <p style="margin-bottom: 40px;">Serving with discipline, fairness, and creativity in undertaking the duty.</p>
@@ -74,25 +153,42 @@
             </div>
         </div>
     </section>
-        <footer class="footer">
+
+    <footer class="footer">
         <h3>Follow Us</h3>
-       <div class="social-links">
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> 
-</div>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> 
+        </div>
         <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
+        <p>Motto: Education is Gold</p>
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
-        const hamburger = document.querySelector('.hamburger');
-        menuBtn.addEventListener('click', () => {
+        const overlay = document.getElementById('overlay');
+        const hamburger = document.getElementById('hamburger');
+
+        function toggleMenu() {
             sideNav.classList.toggle('open');
+            overlay.classList.toggle('show');
             hamburger.classList.toggle('active');
-        });
+        }
+
+        function closeAll() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+
+        function searchPage() {
+            let input = document.getElementById("menuSearchInput").value.toLowerCase();
+            document.querySelectorAll(".card").forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
     </script>
 </body>
 </html>

@@ -6,6 +6,75 @@
     <title>Admissions | Pison Pre & Primary School</title>
     <link rel="stylesheet" href="css/pison.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Consistent Slide Menu Styling */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 280px;
+            height: 100%;
+            background: #fff;
+            z-index: 1002;
+            transition: 0.4s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+        .slide-menu.open { right: 0; }
+        
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .menu-header h2 {
+            color: #2c52a0;
+            font-size: 20px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        .close-btn-x {
+            font-size: 24px;
+            color: #2c52a0;
+            cursor: pointer;
+        }
+        .menu-search-box {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .menu-search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            color: #888;
+        }
+        .slide-menu a {
+            padding: 12px 0;
+            color: #2c52a0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1001;
+        }
+        .overlay.show { display: block; }
+    </style>
 </head>
 <body>
 
@@ -23,32 +92,39 @@
                 </div>
             </a>
 
-            <div class="school-menu">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <div class="nav-trigger" id="menuBtn">
-                    <span class="menu-text"></span>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+            <nav class="school-menu">
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
 
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
     <nav class="slide-menu" id="sideNav">
+        <div class="menu-header">
+            <h2>MENU</h2>
+            <div class="close-btn-x" onclick="closeAll()">&times;</div>
+        </div>
+        
+        <div class="menu-search-box">
+            <input type="text" id="menuSearchInput" placeholder="Search admissions..." onkeyup="searchPage()">
+        </div>
+
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="programs.html">Programs</a>
         <a href="admission.html">Admissions</a>
         <a href="contact.html">Contact</a>
         <a href="academics.html">Academics</a>
-        
+        <a href="news.html">News</a>
     </nav>
 
-    <section class="slider">
-        <div class="slide active" style="background-image: url('admission-hero.jpg');">
+    <section class="slider" style="height: 50vh;">
+        <div class="slide active" style="background-image: url('images/admission-hero.jpg');">
             <div class="slide-content">
                 <h2>Join Our Community</h2>
                 <p>Begin your child's journey toward excellence. Our transparent admission process is designed to find the best fit for your family.</p>
@@ -66,29 +142,29 @@
         
         <div class="cards">
             <div class="card">
-                <i class="fa-solid fa-file-signature" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <i class="fa-solid fa-file-signature" style="font-size: 2.5rem; color: #2c52a0; margin-bottom: 15px;"></i>
                 <h3>1. Application</h3>
                 <p>Fill out the online application form or visit our school office to collect a physical form.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-calendar-check" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <i class="fa-solid fa-calendar-check" style="font-size: 2.5rem; color: #2c52a0; margin-bottom: 15px;"></i>
                 <h3>2. Assessment</h3>
                 <p>Prospective students will undergo a friendly placement interview and entry assessment.</p>
             </div>
             <div class="card">
-                <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
+                <i class="fa-solid fa-comments" style="font-size: 2.5rem; color: #2c52a0; margin-bottom: 15px;"></i>
                 <h3>3. Review</h3>
                 <p>Our admissions committee reviews the assessment and application within 3-5 business days.</p>
             </div>
             <div class="card">
-                <i class="fa-solid fa-school-circle-check" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <i class="fa-solid fa-school-circle-check" style="font-size: 2.5rem; color: #2c52a0; margin-bottom: 15px;"></i>
                 <h3>4. Enrollment</h3>
                 <p>Once accepted, complete the registration fee payment to secure your child's seat.</p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="apply" style="background: var(--white); border-radius: var(--radius); margin: 40px auto; max-width: 800px; box-shadow: var(--shadow); padding: 50px;">
+    <section class="section" id="apply" style="background: #fff; border-radius: 8px; margin: 40px auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 50px;">
         <h2>Inquiry Form</h2>
         <p>Complete this form and our admissions team will contact you shortly.</p>
         
@@ -114,35 +190,40 @@
     </section>
 
     <footer class="footer">
-        <footer class="footer">
         <h3>Follow Us</h3>
-       <div class="social-links">
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
         <p>© 2025 Pison Pre & Primary School. All rights reserved.</p>
-        <p>Education is Gold</p>
+        <p>Motto: Education is Gold</p>
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
-        const hamburger = document.querySelector('.hamburger');
+        const overlay = document.getElementById('overlay');
+        const hamburger = document.getElementById('hamburger');
 
-        menuBtn.addEventListener('click', () => {
+        function toggleMenu() {
             sideNav.classList.toggle('open');
+            overlay.classList.toggle('show');
             hamburger.classList.toggle('active');
-        });
+        }
 
-        // Close menu if clicked outside
-        document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !sideNav.contains(e.target)) {
-                sideNav.classList.remove('open');
-                hamburger.classList.remove('active');
-            }
-        });
+        function closeAll() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+
+        function searchPage() {
+            let input = document.getElementById("menuSearchInput").value.toLowerCase();
+            document.querySelectorAll(".section").forEach(s => {
+                s.style.display = s.innerText.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
     </script>
 </body>
 </html>
